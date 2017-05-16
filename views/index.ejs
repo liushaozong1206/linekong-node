@@ -1,0 +1,118 @@
+<%- include('include/header', {data: headerFooter, lang: lang}) %>
+<link href="./pages/index/index.css" rel="stylesheet">
+
+
+<!--banner-->
+<div class="swiper-container banner">
+    <div class="loading" id="bannerLoad">
+        <div class="loader">Loading...</div>
+    </div>
+    <div class="swiper-wrapper" id="bannerSwiperWrapper"></div>
+    <div class="swiper-pagination"></div>
+    <a class="prev" id="bannerPrev"><span><img src="./pages/index/img/prev.png"/></span></a>
+    <a class="next" id="bannerNext"><span><img src="./pages/index/img/next.png"/></span></a>
+</div>
+
+<!--category-->
+<ul class="category clearfix">
+    <% for (var i = 0 in category) { %>
+    <li data-src="<%= category[i].url %>" class="<%= i % 2 != 0 ? 'double' : '' %>">
+        <img src="pages/index/img/category<%= i %>.jpg">
+        <a><%= category[i].title %></a>
+        <p><%- category[i].text %></p>
+    </li>
+    <% } %>
+</ul>
+
+<!--hot-->
+<div class="hot-recommend">
+    <h3 class="hot-title">热门推荐</h3>
+    <a class="change">换一批</a>
+    <div class="hot-con-wrap">
+        <div class="hot-con"></div>
+        <div class="loading" id="hotLoad">
+            <div class="loader">Loading...</div>
+        </div>
+    </div>
+</div>
+<div class="hot-mobile-out">
+    <h3 class="mobile-title"><%= lang == 'hant' ? '熱門推薦' : '热门推荐' %></h3>
+    <div class="hot-mobile-wrap"></div>
+</div>
+
+<!--production-wrap-->
+<div class="production-pc">
+    <div class="pro-con">
+        <h3 class="pro-title"><%= lang == 'hant' ? '藍港產品' : '蓝港产品' %></h3>
+        <ul class="pro-btn">
+            <li>
+                <img src="./public/img/game.png"/>
+                <h3><%= product[0].title %></h3>
+                <span></span>
+            </li>
+            <li>
+                <img src="./public/img/film.png"/>
+                <h3><%= product[1].title %></h3>
+                <span></span>
+            </li>
+            <li>
+                <img src="./public/img/tech.png"/>
+                <h3><%= product[2].title %></h3>
+                <span></span>
+            </li>
+            <li>
+                <img src="./public/img/net.png"/>
+                <h3><%= product[3].title %></h3>
+                <span></span>
+            </li>
+        </ul>
+        <div class="pro-detail">
+            <div class="pro-detailin"><%- productstr.pc %></div>
+        </div>
+        <div class="legend">
+            <span class="ishot"><%= lang == 'hant' ? '熱門遊戲' : '热门游戏' %></span>
+            <span class="isnew"><%= lang == 'hant' ? '最新遊戲' : '最新游戏' %></span>
+            <span class="istest"><%= lang == 'hant' ? '測試遊戲' : '测试游戏' %></span>
+        </div>
+        <a target="_blank" class="gift-pkg" href="http://bbs.8864.com/kgame-index.html"><img
+                    src="./pages/index/img/get-gift.png"></a>
+    </div>
+</div>
+<div class="production-mobile">
+    <h3 class="mobile-title"><%= lang == 'hant' ? '藍港產品' : '蓝港产品' %></h3>
+    <ul class="pro-btn">
+        <li>
+            <img src="./public/img/svg/game-black.svg"/>
+            <h3><%= product[0].title %></h3>
+            <span></span>
+        </li>
+        <li>
+            <img src="./public/img/svg/film-black.svg"/>
+            <h3><%= product[1].title %></h3>
+            <span></span>
+        </li>
+        <li>
+            <img src="./public/img/svg/tech-black.svg"/>
+            <h3><%= product[2].title %></h3>
+            <span></span>
+        </li>
+        <li>
+            <img src="./public/img/svg/net-black.svg"/>
+            <h3><%= product[3].title %></h3>
+            <span></span>
+        </li>
+    </ul>
+    <div class="pro-con">
+        <%- productstr.mobile %>
+        <a target="_blank" class="gift-pkg" href="http://bbs.8864.com/kgame-index.html">&gt;&gt;领取礼包&lt;&lt;</a>
+    </div>
+</div>
+
+<!--link-->
+<div class="link-wrap">
+    <%- linkStr %>
+</div>
+
+
+<script data-main="pages/index/index.js" defer async="true" src="http://common.8864.com/web/js/require.js"></script>
+<%- include('include/footer', {data: headerFooter, lang: lang}) %>

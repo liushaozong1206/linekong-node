@@ -1,0 +1,21 @@
+@charset "utf-8";
+/**
+ * Author：zhoushuanglong
+ * Time：2017/3/10
+ * Description：Description
+ */
+
+/*----------default font-size 16px----------*/
+@function dem($elementsPixel) {
+    @return (1 / 16 * $elementsPixel) + em;
+}
+
+/*----------parent font-size----------*/
+@function pem($parentFontSize, $elementsPixel) {
+    @return (1 / $parentFontSize * $elementsPixel) + em;
+}
+
+/*----------self font-size----------*/
+@function sem($selfSize, $elementsPixel) {
+    @return (1 / $selfSize * $elementsPixel) + em;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="<%= data.keywords.text %>">
+    <meta name="description" content="<%= data.description.text %>">
+    <meta name="author" content="author">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--remove weixin's cache -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title><%= data.title.text %></title>
+
+    <!--publlic-->
+    <!--[if lt IE 8]>
+    <script src="http://common.8864.com/web/js/browser-tips.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://common.8864.com/web/js/css3-mediaqueries.js"></script>
+    <script src="http://common.8864.com/web/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!--plugin-->
+    <link href="http://common.8864.com/web/plugins/swiper2/idangerous.swiper.css" rel="stylesheet">
+
+    <!--private-->
+    <link href="./public/public.css" rel="stylesheet">
+
+</head>
+<body>
+<header class="pc">
+    <div class="header-con">
+        <a class="linekong-logo" href="/"><img src="./public/img/logo.png"></a>
+        <div class="lang">
+            <a class="btn">
+                <%= lang == 'hant' ? '繁' : '简' %>
+            </a>
+            <div class="con">
+                <a data-type="hans" class="lang-switch">简</a>
+                <a data-type="hant" class="lang-switch">繁</a>
+                <a target="_blank" href="<%= data.korean.url %>"><%= data.korean.text %></a>
+            </div>
+        </div>
+        <!--<a class="login">登陆</a>-->
+        <!--<a target="_blank" href="<%= data.store.url %>" class="store"><span><%= data.store.text %></span></a>-->
+        <ul class="nav">
+            <li class="active"><a target="_blank" class="nav-btn" href="<%= data.index.url %>"><%= data.index.text %>
+                    <span class="line"></span></a></li>
+            <li class="production">
+                <a class="nav-btn">蓝港产品<span class="line"></span></a>
+                <div class="nav-dropdown">
+                    <a target="_blank" href="<%= data.game.url %>"><%= data.game.text %></a>
+                    <a target="_blank" href="<%= data.film.url %>"><%= data.film.text %></a>
+                    <a target="_blank" href="<%= data.tech.url %>"><%= data.tech.text %></a>
+                    <a target="_blank" href="<%= data.net.url %>"><%= data.net.text %></a>
+                </div>
+            </li>
+            <li class="game"><a target="_blank" class="nav-btn" href="<%= data.game.url %>"><%= data.game.text %><span
+                            class="line"></span></a></li>
+            <li class="film"><a target="_blank" class="nav-btn" href="<%= data.film.url %>"><%= data.film.text %><span
+                            class="line"></span></a></li>
+            <li class="tech"><a target="_blank" class="nav-btn" href="<%= data.tech.url %>"><%= data.tech.text %><span
+                            class="line"></span></a></li>
+            <li class="net"><a target="_blank" class="nav-btn" href="<%= data.net.url %>"><%= data.net.text %><span
+                            class="line"></span></a></li>
+            <li>
+                <a class="nav-btn"><%= data.news.text %><span class="line"></span></a>
+                <div class="nav-dropdown">
+                    <a target="_blank" href="<%= data.dynamic.url %>"><%= data.dynamic.text %></a>
+                    <a target="_blank" href="<%= data.media.url %>"><%= data.media.text %></a>
+                </div>
+            </li>
+            <li><a target="_blank" class="nav-btn" href="<%= data.contact.url %>"><%= data.contact.text %><span
+                            class="line"></span></a></li>
+        </ul>
+    </div>
+</header>
+<header class="mobile">
+    <div class="header-btn">
+        <a class="pop-btn"><img src="./public/img/svg/nav-pop.svg"></a>
+        <a class="linekong-logo"><img src="./public/img/<%= lang %>/logo-mobile.png"></a>
+        <!--<a class="login"><img src="./public/img/svg/longin.svg"></a>-->
+    </div>
+    <div class="header-pop">
+        <div class="pop-top">
+            <a class="close" id="closeHeaderPop"><img src="./public/img/svg/close.svg"></a>
+            <div class="lang">
+                <% if(lang == 'hant'){ %>
+                <a data-type="hans" class="lang-switch">简</a>'
+                <% } else { %>
+                <a data-type="hant" class="lang-switch">繁</a>
+                <% } %>
+                <a target="_blank" href="<%= data.korean.url %>"><%= data.korean.text %></a>
+            </div>
+        </div>
+        <div class="pop-down">
+            <div class="pop-down-con">
+                <a target="_blank" href="<%= data.index.url %>"><span><img
+                                src="./public/img/svg/home.svg"></span><em><%= data.index.text %></em></a>
+                <a target="_blank" href="<%= data.game.url %>"><span><img
+                                src="./public/img/svg/game.svg"></span><em><%= data.game.text %></em></a>
+                <a target="_blank" href="<%= data.film.url %>"><span><img
+                                src="./public/img/svg/film.svg"></span><em><%= data.film.text %></em></a>
+                <a target="_blank" href="<%= data.tech.url %>"><span><img
+                                src="./public/img/svg/tech.svg"></span><em><%= data.tech.text %></em></a>
+                <a target="_blank" href="<%= data.net.url %>"><span><img
+                                src="./public/img/svg/net.svg"></span><em><%= data.net.text %></em></a>
+                <a target="_blank" href="<%= data.newscenter.url %>"><span><img
+                                src="./public/img/svg/news.svg"></span><em><%= data.newscenter.text %></em></a>
+                <a target="_blank" href="<%= data.gift.url %>"><span><img
+                                src="./public/img/svg/gift.svg"></span><em><%= data.gift.text %></em></a>
+                <a target="_blank" href="<%= data.forum.url %>"><span><img
+                                src="./public/img/svg/forum.svg"></span><em><%= data.forum.text %></em></a>
+                <a target="_blank" href="<%= data.servicemobile.url %>"><span><img
+                                src="./public/img/svg/service.svg"></span><em><%= data.servicemobile.text %></em></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+

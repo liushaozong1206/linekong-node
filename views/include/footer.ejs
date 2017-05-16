@@ -1,0 +1,51 @@
+<footer class="pc clearfix">
+    <div class="content">
+        <a target="_blank" class="logo" href="/"><img src="./public/img/<%= lang == 'hant' ? 'hant' : 'hans' %>/logo-footer.png"></a>
+        <div class="con-right">
+            <div class="link">
+                <a target="_blank" href="<%= data.intro.url %>"><%= data.intro.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.product.url %>"><%= data.product.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.recruit.url %>"><%= data.recruit.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.contact.url %>"><%= data.contact.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.law.url %>"><%= data.law.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.service.url %>"><%= data.service.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.protocol.url %>"><%= data.protocol.text %></a>
+                <span></span>
+                <a id="setHome"><%= data.setindex.text %></a>
+                <span></span>
+                <a id="addFavorite"><%= data.favoriteweb.text %></a>
+            </div>
+            <p class="copyright"><%= data.copyright.text %></p>
+            <p class="record"><%= data.record.text %></p>
+        </div>
+    </div>
+</footer>
+
+<footer class="mobile clearfix">
+    <div class="content">
+        <a target="_blank" class="logo" href="/"><img src="./public/img/<%= lang == 'hant' ? 'hant' : 'hans' %>/logo-footer.png"></a>
+        <div class="con-right">
+            <h4><%= data.linekong.text %></h4>
+            <div class="link clearfix">
+                <a target="_blank" class="intro" href="<%= data.intro.url %>"><%= data.intro.text %></a>
+                <span class="line-one"></span>
+                <a target="_blank" class="protocol" href="<%= data.protocol.url %>"><%= data.protocol.text %></a>
+                <span class="line-two"></span>
+                <a target="_blank" href="<%= data.law.url %>"><%= data.law.text %></a>
+                <span></span>
+                <a target="_blank" href="<%= data.service.url %>"><%= data.service.text %></a>
+            </div>
+            <p class="copyright"><%= data.mcopyright.text %></p>
+            <p class="copyright-pad"><%= data.pcopyright.text %></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
